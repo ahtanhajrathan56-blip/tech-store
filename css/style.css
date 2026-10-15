@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+/* NVIDIA Green & Dark Theme */
+header {
+  background: #000000;
+  color: white;
+  padding: 20px 0;
+  border-bottom: 3px solid #76b900;
+  box-shadow: 0 4px 10px rgba(118, 185, 0, 0.2);
+}
+
+header h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 28px;
+  color: #76b900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+nav {
+  text-align: center;
+}
+
+nav a {
+  color: #b3b3b3;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+nav a:hover, nav a.active {
+  color: #76b900;
+}
+
+main {
+  max-width: 1000px;
+  margin: 30px auto;
+  background: #1a1a1a;
+  padding: 40px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+h2 {
+  color: #76b900;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #333;
+  padding-bottom: 10px;
+}
+
+p {
+  margin-bottom: 15px;
+  color: #b0b0b0;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #333;
+}
+
+th {
+  background-color: #222;
+  color: #76b900;
+}
+
+tr:hover {
+  background-color: #242424;
+}
+
+/* Forms */
+form div, form fieldset {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: 600;
+  color: #76b900;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  background: #262626;
+  border: 1px solid #444;
+  color: white;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #76b900;
+  outline: none;
+}
+
+fieldset {
+  border: 1px solid #444;
+  padding: 15px;
+  border-radius: 6px;
+  background: #222;
+}
+
+legend {
+  font-weight: 600;
+  color: #76b900;
+  padding: 0 5px;
+}
+
+fieldset label {
+  display: inline-block;
+  margin-right: 20px;
+  font-weight: normal;
+  color: #e0e0e0;
+}
+
+fieldset input[type="radio"] {
+  margin-right: 5px;
+  accent-color: #76b900;
+}
+
+button[type="submit"] {
+  background-color: #76b900;
+  color: black;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #5ea000;
+}
+
+/* Grid for products */
+.product-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.product-card {
+  background: #222;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  width: 30%;
+  text-align: center;
+}
+
+.product-card img {
+  max-width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.product-card a {
+  color: #76b900;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.product-card a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #000000;
+  color: #888;
+  margin-top: 40px;
+  font-size: 14px;
+  border-top: 1px solid #333;
+}

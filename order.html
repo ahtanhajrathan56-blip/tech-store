@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тапсырыс беру | NVIDIA Store</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Тапсырыс рәсімдеу</h1>
+    <nav>
+      <a href="index.html">Басты бет</a>
+      <a href="catalog.html">Каталог</a>
+      <a href="detail.html">Тауар</a>
+      <a href="order.html" class="active">Тапсырыс</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Видеокартаға тапсырыс беру формасы</h2>
+    <form action="#" method="get">
+      <div>
+        <label for="client">Аты-жөніңіз:</label>
+        <input type="text" id="client" name="client" required placeholder="Толық аты-жөніңіз">
+      </div>
+
+      <div>
+        <label for="phone">Телефон нөміріңіз:</label>
+        <input type="tel" id="phone" name="phone" required placeholder="+7 (700) 000-00-00">
+      </div>
+
+      <div>
+        <label for="email">Email поштаңыз:</label>
+        <input type="email" id="email" name="email" required placeholder="example@nvidia.com">
+      </div>
+
+      <div>
+        <label for="product">Видеокартаны таңдаңыз:</label>
+        <select id="product" name="product" required>
+          <option value="">-- Үлгіні таңдаңыз --</option>
+          <option value="rtx4090">GeForce RTX 4090 - 850 000 ₸</option>
+          <option value="rtx4080s">GeForce RTX 4080 Super - 620 000 ₸</option>
+          <option value="rtx4070tis">GeForce RTX 4070 Ti Super - 440 000 ₸</option>
+          <option value="rtx4070">GeForce RTX 4070 - 330 000 ₸</option>
+          <option value="rtx4060ti">GeForce RTX 4060 Ti - 230 000 ₸</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="qty">Саны:</label>
+        <input type="number" id="qty" name="qty" min="1" value="1" required>
+      </div>
+
+      <fieldset>
+        <legend>Жеткізу түрі</legend>
+        <label><input type="radio" name="delivery" value="pickup" required> Өзі алып кету (Showroom)</label>
+        <label><input type="radio" name="delivery" value="courier"> Курьер арқылы жеткізу</label>
+      </fieldset>
+
+      <div>
+        <label for="address">Жеткізу мекенжайы:</label>
+        <input type="text" id="address" name="address" placeholder="Қала, көше, үй нөмірі">
+      </div>
+
+      <div>
+        <label for="comment">Түсініктеме:</label>
+        <textarea id="comment" name="comment" rows="3" placeholder="Қосымша тілектер..."></textarea>
+      </div>
+
+      <button type="submit">Тапсырыс беру</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 NVIDIA Store</p>
+  </footer>
+</body>
+</html>

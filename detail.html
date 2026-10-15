@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тауар сипаттамасы | NVIDIA Store</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Видеокарта сипаттамасы</h1>
+    <nav>
+      <a href="index.html">Басты бет</a>
+      <a href="catalog.html">Каталог</a>
+      <a href="order.html">Тапсырыс</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2 id="gpu-title">Тауар жүктелуде...</h2>
+    <div style="text-align: center; margin-bottom: 20px;">
+      <img id="gpu-img" src="" alt="Видеокарта суреті" width="300" style="border-radius: 8px; border: 1px solid #76b900; display:none;">
+    </div>
+
+    <p><strong id="gpu-price"></strong></p>
+    <p id="gpu-desc"></p>
+
+    <h3>Техникалық сипаттамалары:</h3>
+    <table>
+      <tr><th>Сипаттама түрі</th><th>Мәні</th></tr>
+      <tr><td>Графикалық процессор (GPU)</td><td id="spec-gpu">-</td></tr>
+      <tr><td>Жедел жад (VRAM)</td><td id="spec-vram">-</td></tr>
+      <tr><td>Шина ені</td><td id="spec-bus">-</td></tr>
+      <tr><td>Тұтынылатын қуат (TDP)</td><td id="spec-tdp">-</td></tr>
+      <tr><td>Интерфейс</td><td id="spec-interface">-</td></tr>
+    </table>
+
+    <br>
+    <p><a href="order.html" style="color: #76b900; font-weight: bold;">→ Осы видеокартаға тапсырыс беру</a></p>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 NVIDIA Store</p>
+  </footer>
+
+  <script>
+    // Барлық видеокарталардың базасы
+    const products = {
+      "rtx4090": {
+        title: "NVIDIA GeForce RTX 4090",
+        price: "Бағасы: 850 000 ₸",
+        img: "images/product-1.jpg",
+        desc: "GeForce RTX 4090 — абсолютті қуатқа ие ең мықты видеокарта. Ada Lovelace архитектурасы мен жаңа буын AI-технологиялары арқасында ең күрделі 3D графика мен 4K ойындарды жоғары FPS көрсеткішінде ойнауға мүмкіндік береді.",
+        vram: "24 GB GDDR6X", bus: "384-bit", tdp: "450W", interface: "PCI Express 4.0"
+      },
+      "rtx4080": {
+        title: "NVIDIA GeForce RTX 4080 Super",
+        price: "Бағасы: 620 000 ₸",
+        img: "images/product-2.jpg",
+        desc: "Жоғары ажыратымдылықтағы ойындар мен контент жасауға арналған жоғары өнімді видеокарта. Ray Tracing мүмкіндіктері мен жылдамдығы тамаша баланста жасалған.",
+        vram: "16 GB GDDR6X", bus: "256-bit", tdp: "320W", interface: "PCI Express 4.0"
+      },
+      "rtx4070ti": {
+        title: "NVIDIA GeForce RTX 4070 Ti Super",
+        price: "Бағасы: 440 000 ₸",
+        img: "images/product-3.jpg",
+        desc: "Ойыншылар арасында өте танымал модель. 16GB жадының арқасында кез келген заманауи ойындарды ультра баптауда ойнауға толық мүмкіндік береді.",
+        vram: "16 GB GDDR6X", bus: "256-bit", tdp: "285W", interface: "PCI Express 4.0"
+      },
+      "rtx4070": {
+        title: "NVIDIA GeForce RTX 4070",
+        price: "Бағасы: 330 000 ₸",
+        img: "images/product-4.jpg",
+        desc: "Тиімді баға мен жоғары өнімділікті біріктірген QHD форматындағы ойындарға арналған тамаша нұсқа.",
+        vram: "12 GB GDDR6X", bus: "192-bit", tdp: "200W", interface: "PCI Express 4.0"
+      },
+      "rtx4060ti": {
+        title: "NVIDIA GeForce RTX 4060 Ti",
+        price: "Бағасы: 230 000 ₸",
+        img: "images/product-5.jpg",
+        desc: "Стримерлер мен киберспортшыларға арналған қуатты да үнемді шешім. DLSS 3 технологиясын толық қолдайды.",
+        vram: "8 GB / 16 GB GDDR6", bus: "128-bit", tdp: "160W", interface: "PCI Express 4.0"
+      },
+      "rtx4060": {
+        title: "NVIDIA GeForce RTX 4060",
+        price: "Бағасы: 170 000 ₸",
+        img: "images/product-6.jpg",
+        desc: "Энергияны өте аз тұтынатын, Full HD форматындағы ойындар үшін ең тиімді және қолжетімді заманауи видеокарта.",
+        vram: "8 GB GDDR6", bus: "128-bit", tdp: "115W", interface: "PCI Express 4.0"
+      },
+      "rtx3060": {
+        title: "NVIDIA GeForce RTX 3060",
+        price: "Бағасы: 140 000 ₸",
+        img: "images/product-7.jpg",
+        desc: "Халық арасында ең көп таралған сенімді классикалық модельдердің бірі. 12GB жады үлкен көлемдегі жұмыстарға өте ыңғайлы.",
+        vram: "12 GB GDDR6", bus: "192-bit", tdp: "170W", interface: "PCI Express 4.0"
+      },
+      "rtx3050": {
+        title: "NVIDIA GeForce RTX 3050",
+        price: "Бағасы: 110 000 ₸",
+        img: "images/product-8.jpg",
+        desc: "Бюджеттік бағыттағы ойындар мен оқу жұмыстарына арналған қолжетімді видеокарта нұсқасы.",
+        vram: "6 GB GDDR6", bus: "96-bit", tdp: "70W", interface: "PCI Express 4.0"
+      }
+    };
+
+    // URL сілтемесінен ID-ді оқып алу (мысалы: ?id=rtx4090)
+    const urlParams = new URLSearchParams(window.location.search);
+    const gpuId = urlParams.get('id');
+
+    // Егер тауар табылмаса немесе ID қате болса
+    if (gpuId && products[gpuId]) {
+      const p = products[gpuId];
+      document.getElementById('gpu-title').innerText = p.title;
+      document.getElementById('gpu-price').innerText = p.price;
+      document.getElementById('gpu-desc').innerText = p.desc;
+      
+      const img = document.getElementById('gpu-img');
+      img.src = p.img;
+      img.style.display = 'inline-block';
+
+      document.getElementById('spec-gpu').innerText = p.title;
+      document.getElementById('spec-vram').innerText = p.vram;
+      document.getElementById('spec-bus').innerText = p.bus;
+      document.getElementById('spec-tdp').innerText = p.tdp;
+      document.getElementById('spec-interface').innerText = p.interface;
+    } else {
+      document.getElementById('gpu-title').innerText = "Тауар табылмады!";
+      document.getElementById('gpu-desc').innerText = "Қате сілтеме немесе тауар жоқ.";
+    }
+  </script>
+</body>
+</html>
